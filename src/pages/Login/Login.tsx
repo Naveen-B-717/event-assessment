@@ -36,7 +36,7 @@ const Login = () => {
             <label htmlFor="userEmail" className="form__label">
               Email
             </label>
-            <input type="text" name="useremail" id="userEmail" className="form__input" onBlur={(e) => dispatch(changeEmail(e.target.value))} />
+            <input type="text" name="useremail" id="userEmail" className="form__input" onBlur={(e) => dispatch(changeEmail(e.target.value))} placeholder="Please enter your email" />
             {errorUser.email && (
               <div className="form__input-error">
                 <p>Email is not valid</p>
