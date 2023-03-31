@@ -12,3 +12,18 @@
   -webkit-line-clamp: $args-lines;
   overflow: hidden;
 }
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+      @content;
+  }
+  &:-moz-placeholder {
+      @content;
+  }
+  &::-moz-placeholder {
+      @content;
+  }
+  &:-ms-input-placeholder {
+      @content;
+  }
+}

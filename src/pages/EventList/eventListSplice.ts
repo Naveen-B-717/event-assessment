@@ -11,10 +11,10 @@ export const eventListSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     getEvents: (state) => {
-      
+      const activeUser = JSON.parse(localStorage.getItem("activeUser") || "");
       const eventList = JSON.parse(localStorage.getItem("event") || "[]") || [];
-      state.eventList = eventList;
-      
+      const data = eventList.filter((x: any) => x.user === activeUser);
+      state.eventList = data;
     },
   },
 });

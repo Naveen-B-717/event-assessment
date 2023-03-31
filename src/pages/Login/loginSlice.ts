@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User, UserError } from "../../app/models/user";
 import { RootState } from "../../app/store";
 import { validateEmail, validatePassword } from "../../utils/utils";
-// import { fetchCount } from "./counterAPI";
 
 const initialState = {
   user: new User({}),
@@ -35,7 +34,9 @@ export const loginSlice = createSlice({
     },
     submitLogin: (state) => {
       const userList = JSON.parse(localStorage.getItem("user") || "[]") || [];
-      const index = userList.findIndex((x: any) => x.email === state.user.email);
+      const index = userList.findIndex(
+        (x: any) => x.email === state.user.email
+      );
       if (index > -1) {
         if (state.user.password === userList[index].password) {
           localStorage.setItem("activeUser", JSON.stringify(state.user.email));
@@ -63,7 +64,8 @@ export const loginSlice = createSlice({
   },
 });
 
-export const { changeEmail, changePassword, submitLogin, submitCheck } = loginSlice.actions;
+export const { changeEmail, changePassword, submitLogin, submitCheck } =
+  loginSlice.actions;
 
 export const userData = (state: RootState) => state.login.user;
 export const userError = (state: RootState) => state.login.errorUser;

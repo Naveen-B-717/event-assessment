@@ -19,6 +19,7 @@
   --font-size-30: 30px;
   --font-size-h1: 48px;
 }
+@import './mixins';
 
 *::before,
 *::after {
@@ -59,6 +60,10 @@ h2 {
 
 .form {
   &__input {
+    @include placeholder{
+      font-size: 14px;
+      color: var(--gray-200);
+    };
     height: 38px;
     border: 1px solid var(--gray-400);
     border-radius: 8px;
@@ -150,8 +155,9 @@ h2 {
 }
 
 .title {
-  font-size: 25px;
+text-align: center;
   margin-bottom: 20px;
+
 }
 
 .container {

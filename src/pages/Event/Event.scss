@@ -5,7 +5,10 @@
   // height: 100vh;
   margin: 60px auto;
   &__block {
+    width: 265px;
+    @media screen and (min-width:568px) {
     width: 450px;
+    }
     border: 1px solid var(--gray-200);
     padding: 36px;
     border-radius: 8px;

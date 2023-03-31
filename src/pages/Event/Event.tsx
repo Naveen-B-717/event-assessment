@@ -53,6 +53,7 @@ const Event = () => {
               name="eventname"
               id="eventName"
               className="form__input"
+              placeholder="Enter event name..."
               value={event.name}
               onChange={(e) =>
                 dispatch(changeData({ type: "name", value: e.target.value }))
@@ -152,6 +153,7 @@ const Event = () => {
               name="eventdescription"
               id="eventDescription"
               value={event.description}
+              placeholder="Enter event  description here..."
               onChange={(e) =>
                 dispatch(
                   changeData({ type: "description", value: e.target.value })
@@ -179,7 +181,7 @@ const Event = () => {
             />
             <span>I accept terms & conditions</span>
             {errorEvnt.termsAccepted && (
-              <div className="form__input-error">
+              <div className="form__input-error flex-100">
                 <p>Please accept terms & conditions</p>
               </div>
             )}

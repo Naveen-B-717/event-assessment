@@ -35,7 +35,7 @@ const Register = () => {
             <label htmlFor="userEmail" className="form__label">
               Email
             </label>
-            <input type="text" name="username" id="userEmail" className="form__input" onBlur={(e) => dispatch(changeRegisterEmail(e.target.value))} />
+            <input type="text" name="username" id="userEmail" className="form__input" onBlur={(e) => dispatch(changeRegisterEmail(e.target.value))} placeholder="Enter your email..." />
             {errorUser.email && (
               <div className="form__input-error">
                 <p>Email is not valid</p>
@@ -47,7 +47,7 @@ const Register = () => {
             <label htmlFor="userName" className="form__label">
               User Name
             </label>
-            <input type="text" name="username" id="userName" className="form__input" onBlur={(e) => dispatch(changeRegisterName(e.target.value))} />
+            <input type="text" name="username" id="userName" className="form__input" onBlur={(e) => dispatch(changeRegisterName(e.target.value))}  placeholder="Enter your user name..." />
             {errorUser.name && (
               <div className="form__input-error">
                 <p>Minimum of 2 characters</p>
@@ -59,7 +59,7 @@ const Register = () => {
             <label htmlFor="userPassword" className="form__label">
               Password
             </label>
-            <input className="form__input" type="password" name="pass" id="userPassword" onBlur={(e) => dispatch(changeRegisterPassword(e.target.value))} />
+            <input className="form__input" type="password" name="pass" id="userPassword" onBlur={(e) => dispatch(changeRegisterPassword(e.target.value))}  placeholder="Enter your password..."/>
 
             {errorUser.password && (
               <div className="form__input-error">

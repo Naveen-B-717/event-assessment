@@ -56,7 +56,6 @@ export const eventSlice = createSlice({
     },
     
     submitEvent: (state, action: PayloadAction<string | undefined>) => {
-      
       const eventList = JSON.parse(localStorage.getItem("event") || "[]") || [];
       if (action.payload) {
         const foundIndex = eventList.findIndex((x: any) => x.id === parseInt(action.payload as string, 10));

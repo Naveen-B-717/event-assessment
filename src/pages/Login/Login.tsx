@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
 import "./Login.scss";
-import { changeEmail, changePassword, canSubmit, submitLogin, userError, submitCheck } from "./loginSlice";
+import {
+  changeEmail,
+  changePassword,
+  canSubmit,
+  submitLogin,
+  userError,
+  submitCheck,
+} from "./loginSlice";
 
 const Login = () => {
   const canSubmitForm = useAppSelector(canSubmit);
@@ -36,7 +43,14 @@ const Login = () => {
             <label htmlFor="userEmail" className="form__label">
               Email
             </label>
-            <input type="text" name="useremail" id="userEmail" className="form__input" onBlur={(e) => dispatch(changeEmail(e.target.value))} placeholder="Please enter your email" />
+            <input
+              type="text"
+              name="useremail"
+              id="userEmail"
+              className="form__input"
+              onBlur={(e) => dispatch(changeEmail(e.target.value))}
+              placeholder="Enter your email..."
+            />
             {errorUser.email && (
               <div className="form__input-error">
                 <p>Email is not valid</p>
@@ -47,10 +61,20 @@ const Login = () => {
             <label htmlFor="userPassword" className="form__label">
               Password
             </label>
-            <input className="form__input" type="password" name="pass" id="userPassword" onBlur={(e) => dispatch(changePassword(e.target.value))} />
+            <input
+              className="form__input"
+              type="password"
+              name="pass"
+              id="userPassword"
+              onBlur={(e) => dispatch(changePassword(e.target.value))}
+              placeholder="Enter your password..."
+            />
             {errorUser.password && (
               <div className="form__input-error">
-                <p>Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character</p>
+                <p>
+                  Minimum eight characters, at least one uppercase letter, one
+                  lowercase letter, one number and one special character
+                </p>
               </div>
             )}
           </div>
